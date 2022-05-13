@@ -20,7 +20,7 @@ body{
 
 .slider{
     width: 50%;
-    height: 50%;
+    height: 90%;
 }
 
 .slider__container{
@@ -43,6 +43,7 @@ body{
     height: 100%;
     overflow: hidden;
     background-color: aliceblue;
+    padding-top: 1rem;
 }
 
 .slider__img_container{
@@ -61,9 +62,12 @@ body{
 .slider__img{
     width: 25%;
     height: 100%;
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: center;
 }
 .slider__text_container{
-    width: 70%;
+    width: 50%;
     height: 10%;
     overflow: hidden;
 }
@@ -82,22 +86,23 @@ body{
     padding-left: 1rem;
     display: flex;
     align-items: center;
+    text-align: center;
 }
 
 .img1{
-    background-color: aqua;    
+    background-image: url(./assets/mem1.jpg);
 }
 
 .img2{
-    background-color: rgb(255, 242, 0);
+    background-image: url(./assets/mem2.jpg);
 }
 
 .img3{
-    background-color: rgb(205, 99, 32);
+    background-image: url(./assets/mem3.jpg);
 }
 
 .img4{
-    background-color: rgb(10, 30, 164);
+    background-image: url(./assets/mem4.jpg);
 }
 
 .navigation__radio{
@@ -108,18 +113,36 @@ body{
 }
 
 .navigation__label_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
     width: 30%;
     height: 10%;
     padding-right: 1rem;
 }
 
 .navigation__label{
-    margin-right: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+.navigation__label:hover .navigation__span{
+    border: 0.1rem solid green;
+    background: transparent;
+}
+
+.navigation__span{
     display: inline-block;
-    border: 0.1rem solid blue;
+    border: 0.1rem solid green;
+    background: blue;
     border-radius: 50%;
     width: 1rem;
     height: 1rem;
+    transition: background 0.5s, border 0.5s;
 }
 
 .radio1:checked ~ .slider__img_container .slider__img_wrapper{
@@ -130,12 +153,23 @@ body{
     margin-left: 0;
 }
 
+.radio1:checked ~ .navigation__label_container .label1 .navigation__span{
+    border: 0.1rem solid blue;
+    background: rgb(251, 0, 255);
+}
+
+
 .radio2:checked ~ .slider__img_container .slider__img_wrapper{
     margin-left: -100%;
 }
 
 .radio2:checked ~ .slider__text_container .slider__text_wrapper{
     margin-left: -100%;
+}
+
+.radio2:checked ~ .navigation__label_container .label2 .navigation__span{
+    border: 0.1rem solid blue;
+    background: rgb(251, 0, 255);
 }
 
 .radio3:checked ~ .slider__img_container .slider__img_wrapper{
@@ -146,12 +180,22 @@ body{
     margin-left: -200%;
 }
 
+.radio3:checked ~ .navigation__label_container .label3 .navigation__span{
+    border: 0.1rem solid blue;
+    background: rgb(251, 0, 255);
+}
+
 .radio4:checked ~ .slider__img_container .slider__img_wrapper{
     margin-left: -300%;
 }
 
 .radio4:checked ~ .slider__text_container .slider__text_wrapper{
     margin-left: -300%;
+}
+
+.radio4:checked ~ .navigation__label_container .label4 .navigation__span{
+    border: 0.1rem solid blue;
+    background: rgb(251, 0, 255);
 }
 
 
